@@ -2,10 +2,7 @@ package com.example.room_dagger_phil;
 
 import android.app.Application;
 
-import com.example.room_dagger_phil.di.component.ApplicationComponent;
 import com.example.room_dagger_phil.di.component.DaggerApplicationComponent;
-import com.example.room_dagger_phil.di.module.ApplicationModule;
-import com.example.room_dagger_phil.di.module.DatabaseModule;
 
 public class MyApplication extends Application {
 

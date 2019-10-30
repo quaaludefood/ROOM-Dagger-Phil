@@ -4,7 +4,6 @@ import android.os.AsyncTask;
 
 import androidx.lifecycle.LiveData;
 
-import com.example.room_dagger_phil.data.db.dao.ActionDao;
 import com.example.room_dagger_phil.data.db.entity.ActionEntity;
 
 import java.util.List;
@@ -17,11 +16,8 @@ public interface ActionRepository {
 
     LiveData<List<ActionEntity>> getAllActions();
 
-
      long insertAction(ActionEntity actionEntity);
 
     int deleteAction(ActionEntity actionEntity);
-
-
 
 }

@@ -13,6 +13,7 @@ import com.example.room_dagger_phil.data.db.dao.ActionDao;
 import com.example.room_dagger_phil.data.db.entity.ActionEntity;
 import com.example.room_dagger_phil.data.db.repository.ActionRepository;
 import com.example.room_dagger_phil.di.component.DaggerAppComponent;
+import com.example.room_dagger_phil.di.module.ApiModule;
 import com.example.room_dagger_phil.di.module.AppModule;
 import com.example.room_dagger_phil.di.module.RoomModule;
 
@@ -24,6 +25,9 @@ public class MainActivity extends AppCompatActivity {
 
     @Inject
     public ActionRepository actionRepository;
+
+    @Inject
+    public ApiModule apiModule;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,6 +47,8 @@ public class MainActivity extends AppCompatActivity {
                 Toast.makeText(MainActivity.this, String.format("Product size: %s", products.size()), Toast.LENGTH_SHORT).show();
             }
         });
+
+
     }
 
 }

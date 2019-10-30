@@ -6,14 +6,7 @@ import androidx.room.Index;
 import androidx.room.PrimaryKey;
 
 
-@Entity(tableName = "action_table",
-        indices = {@Index(name = "person_idx", value = {"person_id"})},
-        foreignKeys = {@ForeignKey(entity = PersonEntity.class,
-                parentColumns = {"person_id"},
-                childColumns = {"person_id"},
-                onDelete = ForeignKey.CASCADE)
-        }
-)
+@Entity
 public class ActionEntity {
 
     // Properties
@@ -23,15 +16,14 @@ public class ActionEntity {
 
     private boolean active;
     private String name;
-    private int person_id;
 
     // Constructors
 
-    public ActionEntity(boolean active, String name, int person_id) {
+    public ActionEntity(boolean active, String name) {
 
         this.active = active;
         this.name = name;
-        this.person_id = person_id;
+
     }
 
     // Methods
@@ -41,9 +33,6 @@ public class ActionEntity {
         this.action_id = action_id;
     }
 
-    public int getPerson_id() {
-        return person_id;
-    }
 
     public int getAction_id() {
         return action_id;

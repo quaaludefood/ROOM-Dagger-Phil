@@ -1,16 +1,15 @@
-package com.example.room_dagger_phil.data.db;
+package com.example.room_dagger_phil.data.db.repository;
 
 import androidx.room.RoomDatabase;
 import androidx.room.Database;
 
 import com.example.room_dagger_phil.data.db.dao.ActionDao;
-import com.example.room_dagger_phil.data.db.dao.PersonDao;
 import com.example.room_dagger_phil.data.db.entity.ActionEntity;
-import com.example.room_dagger_phil.data.db.entity.PersonEntity;
 
-@Database(entities = {PersonEntity.class, ActionEntity.class}, version = 1)
+
+@Database(entities = {ActionEntity.class}, version = AppDatabase.VERSION, exportSchema = false)
 public abstract class AppDatabase extends RoomDatabase {
 
-    public abstract PersonDao getPersonDao();
+    static final int VERSION = 1;
     public abstract ActionDao getActionDao();
 }
